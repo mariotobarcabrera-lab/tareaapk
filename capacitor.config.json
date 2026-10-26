@@ -1,0 +1,6 @@
+{
+  "appId": "com.lumeozone.tareas",
+  "appName": "Tareas",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
