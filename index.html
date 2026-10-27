@@ -436,7 +436,9 @@ function actualizarRepite(){
 $("fRepite").addEventListener("change", actualizarRepite);
 $("fFecha").addEventListener("change", actualizarRepite);
 function actualizarHintPermiso(){
-    show("hintPermiso", soporta && Notification.permission === "default" && $("fRec").value !== "none");
+    // En Android (WebView) no existe la API Notification: se usa el estado del permiso nativo.
+    const pendiente = NT ? permNativo !== "granted" : (soporta && Notification.permission === "default");
+    show("hintPermiso", pendiente && $("fRec").value !== "none");
 }
 function abrirForm(t){
     limpiarErrores();
