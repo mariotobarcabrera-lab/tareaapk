@@ -30,11 +30,14 @@ jobs:
         run: npx cap add android
 
       - name: Permisos de Android
-        run: python3 scripts/patch_android.py
+        run: python3 patch_android.py
 
-      - name: Íconos de la app
+      - name: Iconos de la app
         continue-on-error: true
-        run: npx capacitor-assets generate --android --iconBackgroundColor '#0a0a0a' --iconBackgroundColorDark '#0a0a0a'
+        run: |
+          mkdir -p assets
+          cp icon-only.png assets/icon-only.png
+          npx capacitor-assets generate --android --iconBackgroundColor "#0a0a0a" --iconBackgroundColorDark "#0a0a0a"
 
       - name: Sincronizar
         run: npx cap sync android

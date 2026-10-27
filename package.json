@@ -2,7 +2,7 @@
   "name": "tareas-android",
   "version": "1.0.0",
   "private": true,
-  "scripts": { "build:web": "node scripts/build-web.mjs" },
+  "scripts": { "build:web": "node build-web.mjs" },
   "dependencies": {
     "@capacitor/android": "^6.1.2",
     "@capacitor/core": "^6.1.2",
